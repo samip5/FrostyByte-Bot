@@ -10,6 +10,6 @@ RUN apk add \
 FROM alpine
 ENV GIN_MODE=release
 
-COPY --from=build /go-discord-modtools /
+COPY --from=build /FrostyByte-Bot /
 
-CMD ["/go-discord-modtools"]
+CMD ["/FrostyByte-Bot"]

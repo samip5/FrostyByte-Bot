@@ -72,7 +72,7 @@ func (bot *ModeratorBot) ChangeUserReputation(i *discordgo.InteractionCreate, di
 	return nil
 }
 
-// Called from the App menu, this displays an embed for the moderator to
+// DocumentBehaviorFromButtonContext Called from the App menu, this displays an embed for the moderator to
 // choose to change the reputation of the posting user
 // and (PLANNED) produces output in the evidence channel with information about
 // the message, user and moderation actions taken
@@ -130,7 +130,7 @@ func (bot *ModeratorBot) ShowEvidenceCollectionModal(i *discordgo.InteractionCre
 	}
 }
 
-// Submits evidence to the configured channel (including notes)
+// SubmitReport Submits evidence to the configured channel (including notes)
 func (bot *ModeratorBot) SubmitReport(i *discordgo.InteractionCreate) {
 	ms := discordgo.MessageSend{
 		Embeds: i.Interaction.Message.Embeds,
@@ -251,7 +251,7 @@ respond:
 	}
 }
 
-// Deletes a custom command
+// DeleteCustomSlashCommandFromButtonContext Deletes a custom command
 func (bot *ModeratorBot) DeleteCustomSlashCommandFromButtonContext(i *discordgo.InteractionCreate, commandID string) {
 	var cmds []CustomCommand
 	bot.DB.Where(&CustomCommand{GuildConfigID: i.Interaction.GuildID}).Find(&cmds)

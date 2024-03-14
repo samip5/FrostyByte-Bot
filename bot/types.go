@@ -92,3 +92,11 @@ type botStats struct {
 	GuildsActive     int64 `pretty:"Active servers"`
 	GuildsConfigured int64 `pretty:"Configured servers" global:"true"`
 }
+
+// RSSFeeds This represents the stored feed URLs to monitor
+type RSSFeeds struct {
+	ID        uint `gorm:"primaryKey"`
+	GuildId   string
+	GuildName string
+	URL       string
+}
