@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-const moderatorRepoUrl string = "https://github.com/tyzbit/go-discord-modtools"
+const moderatorRepoUrl string = "https://github.com/samip5/FrostyByte-Bot"
 
 // isAllowed returns a boolean if the user is in the preselected group
 // that should have access to the bot

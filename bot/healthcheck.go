@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Starts a simple health API that pings the DB
+// StartHealthAPI Starts a simple health API that pings the DB
 func (b *ModeratorBot) StartHealthAPI() {
 	app := gin.New()
 	app.Use(

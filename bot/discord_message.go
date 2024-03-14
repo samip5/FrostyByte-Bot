@@ -8,7 +8,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Called from the App menu, this displays an embed for the moderator to
+// DocumentBehaviorFromMessageContext Called from the App menu, this displays an embed for the moderator to
 // choose to change the reputation of the posting user
 // and (PLANNED) produces output in the evidence channel with information about
 // the message, user and moderation actions taken

@@ -8,7 +8,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Takes user-submitted notes and adds it to an in-progress report
+// SaveEvidenceNotes Takes user-submitted notes and adds it to an in-progress report
 func (bot *ModeratorBot) SaveEvidenceNotes(i *discordgo.InteractionCreate) {
 	notes := i.Interaction.ModalSubmitData().
 		Components[0].(*discordgo.ActionsRow).
@@ -37,7 +37,7 @@ func (bot *ModeratorBot) SaveEvidenceNotes(i *discordgo.InteractionCreate) {
 	}
 }
 
-// Takes user-submitted command and adds it to the server config and registers
+// SaveCustomSlashCommand Takes user-submitted command and adds it to the server config and registers
 // it in the guild
 func (bot *ModeratorBot) SaveCustomSlashCommand(i *discordgo.InteractionCreate) {
 	guild, _ := bot.DG.Guild(i.GuildID)

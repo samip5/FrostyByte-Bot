@@ -10,7 +10,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Updates a server setting according to the
+// RespondToSettingsChoice Updates a server setting according to the
 // column name (setting) and the value
 func (bot *ModeratorBot) RespondToSettingsChoice(i *discordgo.InteractionCreate,
 	setting string, value string) {
@@ -40,7 +40,7 @@ func (bot *ModeratorBot) RespondToSettingsChoice(i *discordgo.InteractionCreate,
 	}
 }
 
-// Updates a user reputation, given the source interaction and value to add
+// ChangeUserReputation Updates a user reputation, given the source interaction and value to add
 func (bot *ModeratorBot) ChangeUserReputation(i *discordgo.InteractionCreate, difference int) (err error) {
 	userID := getUserIDFromDiscordReference(i.Interaction.Message.Embeds[0].Fields[0].Value)
 	if userID == "" {

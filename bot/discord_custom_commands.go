@@ -41,7 +41,7 @@ func (bot *ModeratorBot) RegisterCustomCommandHandler(cmds []CustomCommand) {
 					Description:   customCommand.Description,
 					Content:       customCommand.Content,
 				})
-				// I don't think this is how you do this but I
+				// I don't think this is how you do this, but I
 				// can't remember the right way right now lol
 				goto skip_custom_command
 			}

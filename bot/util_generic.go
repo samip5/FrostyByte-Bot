@@ -16,7 +16,7 @@ var (
 		true:  "enabled",
 		false: "disabled",
 	}
-	// Takes a boolean and returns a colorized button if true
+	// ActiveButton Takes a boolean and returns a colorized button if true
 	ActiveButton = map[bool]discordgo.ButtonStyle{
 		true:  discordgo.PrimaryButton,
 		false: discordgo.SecondaryButton,

@@ -1,6 +1,6 @@
 package bot
 
-// Returns a ModeratedUser record from the DB using server and user ID
+// GetModeratedUser Returns a ModeratedUser record from the DB using server and user ID
 // (a user can be in multiple servers)
 func (bot *ModeratorBot) GetModeratedUser(GuildId string, userID string) (moderatedUser ModeratedUser) {
 	guild, _ := bot.DG.Guild(GuildId)

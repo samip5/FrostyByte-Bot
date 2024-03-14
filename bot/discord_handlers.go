@@ -43,7 +43,7 @@ func (bot *ModeratorBot) GuildDeleteHandler(s *discordgo.Session, gd *discordgo.
 	}
 }
 
-// InteractionInit configures all interactive commands
+// InteractionHandler configures all interactive commands
 func (bot *ModeratorBot) InteractionHandler(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	// Technically app actions are commands too, but those are in commands_message.go and commands_user.go
 	// We don't pass the session to these because you can get that from bot.DG

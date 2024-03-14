@@ -10,8 +10,8 @@ import (
 
 // Events
 
-// Handlers
-// ModeratorBot is the main type passed around throughout the code
+// ModeratorBot Handlers
+// This is the main type passed around throughout the code
 // It has many functions for overall bot management
 type ModeratorBot struct {
 	DB     *gorm.DB
@@ -32,7 +32,7 @@ type ModeratorBotConfig struct {
 	Token      string `env:"TOKEN"`
 }
 
-// Servers are called Guilds in the Discord API
+// GuildConfig Servers are called Guilds in the Discord API
 type GuildConfig struct {
 	ID                       string          `pretty:"Server ID" gorm:"type:varchar(191)"`
 	Name                     string          `pretty:"Server Name" gorm:"default:default"`
@@ -42,7 +42,7 @@ type GuildConfig struct {
 	CustomCommands           []CustomCommand `pretty:"Custom commands"`
 }
 
-// Custom commands registered with a specific server
+// CustomCommand Custom commands registered with a specific server
 // ID is registered with the Discord API
 // GuildConfigID is the server ID where the command is registered
 type CustomCommand struct {
@@ -66,7 +66,7 @@ type ModeratedUser struct {
 	Reputation       *int64 `gorm:"default:1"`
 }
 
-// This is the representation of a moderation action
+// ModerationEvent This is the representation of a moderation action
 type ModerationEvent struct {
 	ID                 uint `gorm:"primaryKey"`
 	ModeratedUserID    string

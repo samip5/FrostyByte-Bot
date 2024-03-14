@@ -84,7 +84,7 @@ const (
 	// URLs
 	MessageURLTemplate = "https://discord.com/channels/%s/%s/%s"
 
-	// Shown to the user when `/help` is called
+	// BotHelpText Shown to the user when `/help` is called
 	BotHelpText = `**Usage**
 	In the Discord app, right click (Desktop) or long press (mobile) a message or user to see the available options.
 

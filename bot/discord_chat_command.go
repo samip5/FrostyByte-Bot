@@ -8,7 +8,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// This produces the help text seen from the chat commant `/help`
+// GetHelpFromChatCommandContext This produces the help text seen from the chat command `/help`
 func (bot *ModeratorBot) GetHelpFromChatCommandContext(i *discordgo.InteractionCreate) {
 	err := bot.DG.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -28,7 +28,7 @@ func (bot *ModeratorBot) GetHelpFromChatCommandContext(i *discordgo.InteractionC
 	}
 }
 
-// Sets setting choices from the `/settings` command
+// SetSettingsFromChatCommandContext Sets setting choices from the `/settings` command
 func (bot *ModeratorBot) SetSettingsFromChatCommandContext(i *discordgo.InteractionCreate) {
 	log.Debug("handling settings request")
 	if i.GuildID == "" {
@@ -62,7 +62,7 @@ func (bot *ModeratorBot) SetSettingsFromChatCommandContext(i *discordgo.Interact
 	}
 }
 
-// Gets user info from the `/query` command
+// GetUserInfoFromChatCommandContext Gets user info from the `/query` command
 func (bot *ModeratorBot) GetUserInfoFromChatCommandContext(i *discordgo.InteractionCreate) {
 	userMentions := i.Interaction.ApplicationCommandData().Resolved.Users
 	if len(userMentions) == 0 {
@@ -86,7 +86,7 @@ func (bot *ModeratorBot) GetUserInfoFromChatCommandContext(i *discordgo.Interact
 	}
 }
 
-// Creates a new slash command
+// CreateCustomSlashCommandFromChatCommandContext Creates a new slash command
 func (bot *ModeratorBot) CreateCustomSlashCommandFromChatCommandContext(i *discordgo.InteractionCreate) {
 	err := bot.DG.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseModal,
@@ -139,7 +139,7 @@ func (bot *ModeratorBot) CreateCustomSlashCommandFromChatCommandContext(i *disco
 	}
 }
 
-// Creates a new slash command
+// UseCustomSlashCommandFromChatCommandContext Creates a new slash command
 func (bot *ModeratorBot) UseCustomSlashCommandFromChatCommandContext(i *discordgo.InteractionCreate, content string) {
 	err := bot.DG.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
