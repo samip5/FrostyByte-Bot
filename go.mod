@@ -1,4 +1,4 @@
-module github.com/tyzbit/go-discord-modtools
+module github.com/samip5/FrostyByte-Bot
 
 go 1.19
 
